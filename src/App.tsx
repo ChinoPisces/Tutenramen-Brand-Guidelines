@@ -525,6 +525,7 @@ export default function App() {
             </div>
           </div>
           <div className="clearspace">
+            <div className="clearspace-item">
             <div className="clearspace-diagram" role="img" aria-label="Wordmark with a minimum clear space of one capital-letter height on all four sides">
               <span className="clearspace-x clearspace-x-top" aria-hidden="true">x</span>
               <span className="clearspace-x clearspace-x-left" aria-hidden="true">x</span>
@@ -533,6 +534,7 @@ export default function App() {
               <span className="clearspace-x clearspace-x-bottom" aria-hidden="true">x</span>
             </div>
             <p><strong>Clear space</strong><br />Let x equal the height of a capital letter in the wordmark. Leave at least x of empty space above, below and on both sides. Keep text, images and edges outside this area.</p>
+            </div>
             {egypt && (
               <div className="dark-usage">
                 <div className="dark-usage-stage">
