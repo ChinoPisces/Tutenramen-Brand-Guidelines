@@ -535,14 +535,16 @@ export default function App() {
             </div>
             <p><strong>Clear space</strong><br />Let x equal the height of a capital letter in the wordmark. Leave at least x of empty space above, below and on both sides. Keep text, images and edges outside this area.</p>
             </div>
-            {egypt && (
-              <div className="dark-usage">
-                <div className="dark-usage-stage">
-                  <img src={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}media/TR_logo_ME_onDark.svg`} alt="Tutenramen Modern Egyptian logo on a dark background" />
-                </div>
-                <p><strong>Over dark backgrounds</strong><br />On dark or shifting backgrounds, use the reversed logo. Its parchment face keeps the seal legible while the lapis-to-gold gradient carries the warmth through. Place it on deep, low-detail tones such as night blue, oxblood or bronze. Don't recolor it, outline it or add a glow, and never set the light-background version on dark tones.</p>
+            <div className={egypt ? "dark-usage" : "dark-usage dark-usage-anime"}>
+              <div className="dark-usage-stage">
+                <img src={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}media/${egypt ? "TR_logo_ME_onDark.svg" : "TR_logo_CA_onDark.svg"}`} alt={`Tutenramen ${egypt ? "Modern Egyptian" : "Chibi Anime"} logo on a dark background`} />
               </div>
-            )}
+              {egypt ? (
+                <p><strong>Over dark backgrounds</strong><br />On dark or shifting backgrounds, use the reversed logo. Its parchment face keeps the seal legible while the lapis-to-gold gradient carries the warmth through. Place it on deep, low-detail tones such as night blue, oxblood or bronze. Don't recolor it, outline it or add a glow, and never set the light-background version on dark tones.</p>
+              ) : (
+                <p><strong>Over dark backgrounds</strong><br />On dark or shifting backgrounds, use a reversed mascot: the full sunset gradient, lapis and papyrus, or papyrus alone for small or busy spaces. Place it on deep, low-detail tones such as night blue, plum or burnt orange. Don't recolor it, outline it or add a glow.</p>
+              )}
+            </div>
           </div>
           <UsageRules doText={copy.rules.logo.do} dontText={copy.rules.logo.dont} />
         </section>
