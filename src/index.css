@@ -697,3 +697,16 @@ footer > a { font-size: 11px; }
 .theme-anime footer { container-type: inline-size; }
 .theme-anime footer > div { width: 100%; min-width: 0; }
 .theme-anime footer h2 { font-size: clamp(18px, 6.4cqw, 80px); line-height: 1.02; }
+
+/* Logo over dark, color-shifting backgrounds. */
+.dark-usage { display: flex; align-items: center; gap: 28px; flex-basis: 100%; flex-wrap: wrap; }
+.dark-usage-stage { position: relative; width: min(100%, 360px); aspect-ratio: 360 / 210; display: grid; place-items: center; flex-shrink: 0; overflow: hidden; background: linear-gradient(120deg, #0b101d, #1b2350, #3b1422, #2c1a0b, #0b101d); background-size: 400% 400%; animation: dark-usage-shift 14s ease-in-out infinite; }
+.dark-usage-stage img { width: 78%; height: auto; }
+@keyframes dark-usage-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@media (prefers-reduced-motion: reduce) { .dark-usage-stage { animation: none; } }
+@media (min-width: 1700px) {
+  .clearspace { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr) minmax(0, 320px) minmax(0, 1fr); column-gap: 28px; align-items: center; }
+  .clearspace-diagram { width: 100%; }
+  .dark-usage { display: contents; }
+  .dark-usage-stage { width: 100%; }
+}
